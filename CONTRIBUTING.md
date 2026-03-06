@@ -14,11 +14,11 @@ This document covers only what is specific to this repository.
 >- Git
 
 
-1. **Fork the repository**
-2. **Clone your fork**
+1. **create a repository using this template**: [Use this template](https://github.com/slice-soft/ss-keel-addon-template/generate)
+2. **Clone your repository**
    ```bash
    git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-   cd keel
+   cd REPO_NAME
    ```
 
 3. **Install dependencies**
