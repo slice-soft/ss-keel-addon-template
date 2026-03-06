@@ -39,14 +39,21 @@ ss-keel-addon-template/
 
 ## 🛠️ Create a new addon
 
-To create an addon from this template:
+Recommended option (GitHub Template):
+
+1. Open this repository on GitHub.
+2. Click **Use this template**.
+3. Create your new repository from this template.
+4. Clone your new repository locally.
+
+Alternative option (manual clone):
 
 ```bash
 # Clone the template into a new project
 git clone https://github.com/slice-soft/ss-keel-addon-template.git my-addon
 cd my-addon
 
-#delete the existing git history
+# Delete the existing git history
 rm -rf .git
 
 # Initialize a new git repository
