@@ -2,7 +2,7 @@ module github.com/slice-soft/ss-keel-addon-template
 
 go 1.25.0
 
-require github.com/slice-soft/ss-keel-core v0.9.0
+require github.com/slice-soft/ss-keel-core v0.10.0
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
