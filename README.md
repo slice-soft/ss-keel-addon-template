@@ -80,14 +80,35 @@ Edit `keel-addon.json` with your addon's real values (`name`, `repo`, `version`,
   "name": "my-addon",
   "version": "0.1.0",
   "description": "Short addon description",
-  "register": true,
   "repo": "github.com/your-user/your-repo",
   "steps": [
     {
-      "file": "cmd/main.go",
-      "action": "append",
-      "snippet": "// TODO: add addon initialization here",
-      "flags": []
+      "type": "go_get",
+      "package": "github.com/your-user/your-repo"
+    },
+    {
+      "type": "property",
+      "key": "addon.example-key",
+      "example": "${ADDON_EXAMPLE_KEY:}",
+      "description": "Example runtime setting exposed through application.properties."
+    },
+    {
+      "type": "env",
+      "key": "ADDON_EXAMPLE_KEY",
+      "example": "",
+      "description": "Example environment variable consumed by application.properties."
+    },
+    {
+      "type": "create_provider_file",
+      "filename": "cmd/setup_my_addon.go",
+      "guard": "func setupMyAddon(",
+      "content": "package main\\n\\nimport (\\n  \\\"github.com/slice-soft/ss-keel-core/config\\\"\\n  \\\"github.com/slice-soft/ss-keel-core/core\\\"\\n)\\n\\ntype myAddonConfig struct {\\n  ExampleKey string `keel:\\\"addon.example-key\\\"`\\n}\\n\\nfunc setupMyAddon(app *core.App) {\\n  _ = app\\n  _ = config.MustLoadConfig[myAddonConfig]()\\n}\\n"
+    },
+    {
+      "type": "main_code",
+      "anchor": "before_modules",
+      "guard": "setupMyAddon(",
+      "code": "setupMyAddon()"
     }
   ]
 }
@@ -96,8 +117,8 @@ Edit `keel-addon.json` with your addon's real values (`name`, `repo`, `version`,
 * The Keel CLI uses this file to:
   * Resolve the module to download (`repo`).
   * Validate that the addon matches the expected format.
-  * Execute `steps` to integrate changes automatically.
-  * Register the addon when applicable (`register`).
+  * Execute `steps` to integrate changes automatically across `application.properties`, `.env`, and `cmd/main.go`.
+* Prefer `config.MustLoadConfig[T]` in generated provider files so addon runtime config comes from `application.properties` with env overrides, instead of reading individual keys manually.
 
 ---
 
