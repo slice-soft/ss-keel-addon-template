@@ -49,9 +49,8 @@ func (a *MyAddon) PanelEvents() <-chan contracts.PanelEvent { return a.events }
 
 // --- contracts.Manifestable ---
 
-// Manifest describes the capabilities, resources, and env vars of this addon.
-// The CLI reads this to merge metadata into keel.toml — the addon never
-// writes to keel.toml directly.
+// Manifest describes the capabilities, resources, and config-facing env vars
+// of this addon. The CLI and dev panel consume this metadata.
 func (a *MyAddon) Manifest() contracts.AddonManifest {
 	return contracts.AddonManifest{
 		ID:      "my-addon",
@@ -62,15 +61,16 @@ func (a *MyAddon) Manifest() contracts.AddonManifest {
 		// Resources declares external services this addon depends on.
 		// Common values: "postgres", "redis", "mongodb", "rabbitmq"
 		Resources: []string{},
-		EnvVars: []contracts.EnvVar{
+		EnvVars:   []contracts.EnvVar{
 			// Declare every environment variable your addon reads.
 			// Example:
 			// {
 			// 	Key:         "MY_ADDON_URL",
+			// 	ConfigKey:   "my-addon.url",
 			// 	Description: "Connection URL for My Addon.",
-			// 	Required:    true,
+			// 	Required:    false,
 			// 	Secret:      true,
-			// 	Default:     "",
+			// 	Default:     "http://localhost:8080",
 			// 	Source:      "my-addon",
 			// },
 		},
