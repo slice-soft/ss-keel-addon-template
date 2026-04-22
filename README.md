@@ -1,13 +1,11 @@
 <img src="https://cdn.slicesoft.dev/boat.svg" width="400" />
 
-# Keel Addon Template
-Keel is a Go framework for building REST APIs with modular 
-architecture, automatic OpenAPI, and built-in validation.
+# ss-keel-addon-template
+Base template for building Keel addons with a ready `keel-addon.json` contract, CI/CD scaffolding, and release automation.
 
-[![CI](https://github.com/slice-soft/ss-keel-core/actions/workflows/ci.yml/badge.svg)](https://github.com/slice-soft/ss-keel-core/actions)
+[![Template Repo](https://img.shields.io/badge/Template-ss--keel--addon--template-0A7F5A)](https://github.com/slice-soft/ss-keel-addon-template)
+[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-1f6feb)](https://github.com/slice-soft/ss-keel-addon-template/generate)
 ![Go](https://img.shields.io/badge/Go-1.25+-00ADD8?logo=go&logoColor=white)
-[![Go Report Card](https://goreportcard.com/badge/github.com/slice-soft/ss-keel-core)](https://goreportcard.com/report/github.com/slice-soft/ss-keel-core)
-[![Go Reference](https://pkg.go.dev/badge/github.com/slice-soft/ss-keel-core.svg)](https://pkg.go.dev/github.com/slice-soft/ss-keel-core)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Made in Colombia](https://img.shields.io/badge/Made%20in-Colombia-FCD116?labelColor=003893)
 
@@ -205,7 +203,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 ## Links
 
 - Website: [keel-go.dev](https://keel-go.dev)
-- GitHub: [github.com/slice-soft/ss-keel-cli](https://github.com/slice-soft/ss-keel-cli)
+- GitHub: [github.com/slice-soft/ss-keel-addon-template](https://github.com/slice-soft/ss-keel-addon-template)
 - Documentation: [docs.keel-go.dev](https://docs.keel-go.dev)
 
 ---
