@@ -1,11 +1,12 @@
-# name: CI
-# on:
-#   pull_request:
-#     branches: [main]
-# jobs:
-#   validate:
-#     uses: slice-soft/ss-pipeline/.github/workflows/validate-pr.yml@v0
-#     secrets: inherit
+name: CI
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  dummie:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Dummy job"
 #   go-ci:
 #     uses: slice-soft/ss-pipeline/.github/workflows/ci-go.yml@v0
 #     with:

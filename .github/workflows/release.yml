@@ -1,14 +1,21 @@
-# name: Release Go Library
+name: Release Go Library
 
-# on:
-#   push:
-#     branches: [main]
+on:
+  push:
+    branches: [main]
 
 # permissions:
 #   contents: write
 #   pull-requests: write
 
-# jobs:
+jobs:
+  dummie:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Dummy job"
+
 #   release-go-library:
-#     uses: slice-soft/ss-pipeline/.github/workflows/create-release.yml@v0
+#     uses: slice-soft/ss-pipeline/.github/workflows/release-go-library.yml@v0
+#     with:
+#       module: github.com/slice-soft/ss-keel-core
 #     secrets: inherit
